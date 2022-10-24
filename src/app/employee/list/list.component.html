@@ -1,0 +1,19 @@
+<h1>Employee List</h1>
+<table>
+  <tr>
+    <td>ID</td>
+    <td>Name</td>
+    <td>Email</td>
+    <td>Phone Number</td>
+    <td>Address</td>
+  </tr>
+  <tr *ngFor="let employee of employees; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{employee.name}}</td>
+    <td>{{employee.email}}</td>
+    <td>{{employee.phoneNumber}}</td>
+    <td>{{employee.address}}</td>
+    <a (click)="findEmployeeById(i+1)" routerLink="/employee/edit">Edit</a>
+    <td><button (click)="deleteEmployee(i+1)">Delete</button></td>
+  </tr>
+</table>
